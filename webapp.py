@@ -35,6 +35,19 @@ def get_state_options():
         options += Markup("<option value=\"" + s + "\">" + s + "</option>") #Use Markup so <, >, " are not escaped lt, gt, etc.
     return options
 
+"""def get_county_options():
+    """Return the html code for the drop down menu.  Each option is a state abbreviation from the demographic data."""
+    with open('demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+    county=[]
+    for s2 in states:
+        if s2["County"] not in states:
+            states.append(c["County"])
+    options=""
+    for c2 in county:
+        options += Markup("<option value=\"" + s + "\">" + s + "</option>") #Use Markup so <, >, " are not escaped lt, gt, etc.
+    return options"""
+
 def county_most_under_18(state):
     """Return the name of a county in the given state with the highest percent of under 18 year olds."""
     with open('demographics.json') as demographics_data:
